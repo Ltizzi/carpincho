@@ -9,7 +9,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const MONGOURI = configService.get<string>('MONGODB');
   await MongooseModule.forRoot(MONGOURI);
-  app.useGlobalPipes(new ValidationPipe())
+  app.useGlobalPipes(new ValidationPipe());
   app.enableCors();
   await app.listen(3000);
 }
